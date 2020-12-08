@@ -1,8 +1,8 @@
-<?php include "includes/header.php" ?>
+<?php include "includes/admin_header.php" ?>
 
     <div id="wrapper">
 
-<?php include "includes/navigation.php" ?>
+<?php include "includes/admin_navigation.php" ?>
 
         <div id="page-wrapper">
 
@@ -27,6 +27,10 @@
                         </form><!-- Add Category Form -->
                       </div>
                       <div class="col-xs-6">
+<?php
+$query = "SELECT * FROM categories LIMIT 3";
+$select_categories = mysqli_query($connection, $query);
+ ?>
                         <table class="table table-border table-hover">
                           <thead>
                             <tr>
@@ -35,10 +39,19 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>Baseball Category</td>
-                              <td>Basketbal</td>
-                            </tr>
+<?php
+while($row = mysqli_fetch_assoc($select_categories)){
+  $cat_id = $row['cat_id'];
+  $cat_title = $row['cat_title'];
+?>
+
+                           <tr>
+                             <td><?=$cat_id?></td>
+                             <td><?=$cat_title?></td>
+                           </tr>
+<?php
+}
+ ?>
                           </tbody>
                         </table>
 
@@ -54,4 +67,4 @@
 
     </div>
     <!-- /#wrapper -->
-<?php include "includes/footer.php" ?>
+<?php include "includes/admin_footer.php" ?>
