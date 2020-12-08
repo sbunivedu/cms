@@ -2,6 +2,7 @@
 
     <div id="wrapper">
 
+<?php if($connection) echo "conn"; ?>
 <?php include "includes/navigation.php" ?>
 
         <div id="page-wrapper">
