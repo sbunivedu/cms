@@ -42,10 +42,6 @@ if(isset($_POST['submit'])){
                         </form><!-- Add Category Form -->
                       </div>
                       <div class="col-xs-6">
-<?php
-$query = "SELECT * FROM categories";
-$select_categories = mysqli_query($connection, $query);
- ?>
                         <table class="table table-border table-hover">
                           <thead>
                             <tr>
@@ -54,7 +50,9 @@ $select_categories = mysqli_query($connection, $query);
                             </tr>
                           </thead>
                           <tbody>
-<?php
+<?php // FIND ALL CATEGORIES QUERY
+$query = "SELECT * FROM categories";
+$select_categories = mysqli_query($connection, $query);
 while($row = mysqli_fetch_assoc($select_categories)){
   $cat_id = $row['cat_id'];
   $cat_title = $row['cat_title'];
@@ -63,8 +61,16 @@ while($row = mysqli_fetch_assoc($select_categories)){
                            <tr>
                              <td><?=$cat_id?></td>
                              <td><?=$cat_title?></td>
+                             <td>
+                               <a href="categories.php?delete=<?=$cat_id?>">delete</a></td>
                            </tr>
 <?php
+}
+if(isset($_GET['delete'])){
+  $the_cat_id = $_GET['delete'];
+  $query = "DELETE FROM categories WHERE cat_id = {$the_cat_id} ";
+  $delete_query = mysqli_query($connection, $query);
+  header("Location: categories.php");
 }
  ?>
                           </tbody>
