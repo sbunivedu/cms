@@ -11,7 +11,7 @@
       <div class="col-md-8">
 
         <?php
-          $query = "SELECT * FROM post";
+          $query = "SELECT * FROM posts";
           $select_all_posts_query = mysqli_query($connection, $query);
           while($row = mysqli_fetch_assoc($select_all_posts_query)){
             $post_title = $row['post_title'];

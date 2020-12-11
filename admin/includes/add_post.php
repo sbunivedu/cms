@@ -2,7 +2,7 @@
 if(isset($_POST['create_post'])){
   $post_author = $_POST['author'];
   $post_title = $_POST['title'];
-  $post_category_id = $_POST['post_category_id'];
+  $post_category_id = $_POST['post_category'];
   $post_status = $_POST['post_status'];
 
   $post_image = $_FILES['image']['name'];
@@ -30,8 +30,20 @@ if(isset($_POST['create_post'])){
   </div>
 
   <div class="form-group">
-    <label for="post_category_id">Post Category</label>
-    <input type="text" class="form-control" name="post_category_id">
+    <select class="" name="post_category" id="post_category">
+<?php
+$query = "SELECT * FROM categories ";
+$select_categories = mysqli_query($connection, $query);
+confirm_query($select_categories);
+while($row = mysqli_fetch_assoc($select_categories)){
+  $cat_id = $row['cat_id'];
+  $cat_title = $row['cat_title'];
+ ?>
+      <option value="<?= $cat_id ?>"><?= $cat_title ?></option>
+<?php
+}
+ ?>
+    </select>
   </div>
 
   <div class="form-group">
@@ -57,8 +69,7 @@ if(isset($_POST['create_post'])){
   <div class="form-group">
     <label for="post_content">Post Content</label>
     <textarea type="text" class="form-control" name="post_content" id=""
-      cols="30" rols="10">
-    </textarea>
+      cols="30" rols="10"></textarea>
   </div>
 
   <div class="form-group">
