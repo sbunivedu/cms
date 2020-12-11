@@ -31,7 +31,17 @@ while($row = mysqli_fetch_assoc($select_posts)){
   <td><?= $post_id ?></td>
   <td><?= $post_author ?></td>
   <td><?= $post_title ?></td>
-  <td><?= $post_category_id ?></td>
+<?php
+$query = "SELECT * FROM categories WHERE cat_id = $post_category_id";
+$select_categories_id = mysqli_query($connection, $query);
+while($row = mysqli_fetch_assoc($select_categories_id)){
+  $cat_id = $row['cat_id'];
+  $cat_title = $row['cat_title'];
+ ?>
+  <td><?= $cat_title ?></td>
+<?php
+}
+ ?>
   <td><?= $post_status ?></td>
   <td><img class = 'img-responsive' src = '../images/<?= $post_image ?>'</img></td>
   <td><?= $post_tags ?></td>
