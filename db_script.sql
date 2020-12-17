@@ -19,3 +19,16 @@ CREATE TABLE `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
 
 INSERT INTO `post` (`post_id`, `post_category_id`, `post_title`, `post_author`, `post_date`, `post_image`, `post_content`, `post_tags`, `post_comment_count`, `post_status`) VALUES (NULL, '1', 'Hello world!', 'blu', '2020-11-11', '', 'Wow!', 'blu, hello, php', '0', 'draft');
+
+CREATE TABLE `comments` (
+   `comment_id` INT(3) NOT NULL AUTO_INCREMENT,
+   `comment_post_id` INT(3) NOT NULL,
+   `comment_author` VARCHAR(255) NOT NULL,
+   `comment_email` VARCHAR(255) NOT NULL,
+   `comment_content` TEXT NOT NULL,
+   `comment_status` VARCHAR(255) NOT NULL,
+   `comment_date` DATE NOT NULL,
+   PRIMARY KEY  (`comment_id`)
+ ) ENGINE = InnoDB;
+
+INSERT INTO `comments` (`comment_id`, `comment_post_id`, `comment_author`, `comment_email`, `comment_content`, `comment_status`, `comment_date`) VALUES (NULL, '4', 'blu', 'blu@email.com', 'test content.', '', '2020-12-10');
