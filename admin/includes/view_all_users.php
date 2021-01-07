@@ -31,6 +31,7 @@ while($row = mysqli_fetch_assoc($select_users)){
   <td><?= $user_role ?></td>
   <td><a href='users.php?change_to_admin=<?= $user_id ?>'>Admin</a></td>
   <td><a href='users.php?change_to_subscriber=<?= $user_id ?>'>Subscriber</a></td>
+  <td><a href='users.php?source=edit_user&edit_user=<?= $user_id ?>'>Edit</a></td>
   <td><a href='users.php?delete=<?= $user_id ?>'>Delete</a></td>
 </tr>
 <?php
