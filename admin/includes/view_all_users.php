@@ -31,7 +31,7 @@ while($row = mysqli_fetch_assoc($select_users)){
   <td><?= $user_role ?></td>
   <td><a href='comments.php?approve=<?= $comment_id ?>'>Approve</a></td>
   <td><a href='comments.php?unapprove=<?= $comment_id ?>'>Unapprove</a></td>
-  <td><a href='comments.php?delete=<?= $comment_id ?>'>Delete</a></td>
+  <td><a href='users.php?delete=<?= $user_id ?>'>Delete</a></td>
 </tr>
 <?php
 }
@@ -41,9 +41,9 @@ while($row = mysqli_fetch_assoc($select_users)){
 
 <?php
 if(isset($_GET['delete'])){
-  $the_post_id = $_GET['delete'];
-  $query = "DELETE FROM posts WHERE post_id = {$the_post_id} ";
-  $delete_query = mysqli_query($connection, $query);
-  header("Location: posts.php");
+  $the_user_id = $_GET['delete'];
+  $query = "DELETE FROM users WHERE user_id = {$the_user_id} ";
+  $delete_user_query = mysqli_query($connection, $query);
+  header("Location: users.php");
 }
 ?>

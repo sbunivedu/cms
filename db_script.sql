@@ -40,9 +40,9 @@ CREATE TABLE users` (
    `user_firstname` VARCHAR(255) NOT NULL ,
    `user_lastname` VARCHAR(255) NOT NULL ,
    `user_email` VARCHAR(255) NOT NULL ,
-   `user_image` TEXT NOT NULL ,
+   `user_image` TEXT,
    `user_role` VARCHAR(255) NOT NULL ,
-   `randSalt` VARCHAR(255) NOT NULL ,
+   `randSalt` VARCHAR(255),
    PRIMARY KEY (`user_id`)) ENGINE = InnoDB;
 
  INSERT INTO `users` (`user_id`, `username`, `user_password`, `user_firstname`, `user_lastname`, `user_email`, `user_image`, `user_role`, `randSalt`) VALUES ('1', 'blu', '123', 'B.', 'Lu', 'blu@gmail.com', '', 'admin', '');
