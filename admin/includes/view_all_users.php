@@ -29,8 +29,8 @@ while($row = mysqli_fetch_assoc($select_users)){
   <td><?= $user_lastname ?></td>
   <td><?= $user_email ?></td>
   <td><?= $user_role ?></td>
-  <td><a href='comments.php?approve=<?= $comment_id ?>'>Approve</a></td>
-  <td><a href='comments.php?unapprove=<?= $comment_id ?>'>Unapprove</a></td>
+  <td><a href='users.php?change_to_admin=<?= $user_id ?>'>Admin</a></td>
+  <td><a href='users.php?change_to_subscriber=<?= $user_id ?>'>Subscriber</a></td>
   <td><a href='users.php?delete=<?= $user_id ?>'>Delete</a></td>
 </tr>
 <?php
@@ -40,6 +40,20 @@ while($row = mysqli_fetch_assoc($select_users)){
 </table>
 
 <?php
+if(isset($_GET['change_to_admin'])){
+  $the_user_id = $_GET['change_to_admin'];
+  $query = "UPDATE users SET user_role = 'admin' WHERE user_id = {$the_user_id}";
+  $change_role_query = mysqli_query($connection, $query);
+  header("Location: users.php");
+}
+
+if(isset($_GET['change_to_subscriber'])){
+  $the_user_id = $_GET['change_to_subscriber'];
+  $query = "UPDATE users SET user_role = 'subscriber' WHERE user_id = {$the_user_id}";
+  $change_role_query = mysqli_query($connection, $query);
+  header("Location: users.php");
+}
+
 if(isset($_GET['delete'])){
   $the_user_id = $_GET['delete'];
   $query = "DELETE FROM users WHERE user_id = {$the_user_id} ";
