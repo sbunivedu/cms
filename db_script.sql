@@ -32,3 +32,17 @@ CREATE TABLE `comments` (
  ) ENGINE = InnoDB;
 
 INSERT INTO `comments` (`comment_id`, `comment_post_id`, `comment_author`, `comment_email`, `comment_content`, `comment_status`, `comment_date`) VALUES (NULL, '4', 'blu', 'blu@email.com', 'test content.', '', '2020-12-10');
+
+CREATE TABLE users` (
+   `user_id` INT(3) NOT NULL AUTO_INCREMENT ,
+   `username` VARCHAR(255) NOT NULL ,
+   `user_password` VARCHAR(255) NOT NULL ,
+   `user_firstname` VARCHAR(255) NOT NULL ,
+   `user_lastname` VARCHAR(255) NOT NULL ,
+   `user_email` VARCHAR(255) NOT NULL ,
+   `user_image` TEXT NOT NULL ,
+   `user_role` VARCHAR(255) NOT NULL ,
+   `randSalt` VARCHAR(255) NOT NULL ,
+   PRIMARY KEY (`user_id`)) ENGINE = InnoDB;
+
+ INSERT INTO `users` (`user_id`, `username`, `user_password`, `user_firstname`, `user_lastname`, `user_email`, `user_image`, `user_role`, `randSalt`) VALUES ('1', 'blu', '123', 'B.', 'Lu', 'blu@gmail.com', '', 'admin', '');
