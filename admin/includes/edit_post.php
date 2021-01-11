@@ -82,10 +82,21 @@ while($row = mysqli_fetch_assoc($select_categories)){
     <label for="post_author">Post Author</label>
     <input type="text" class="form-control" name="post_author" value="<?= $post_author ?>">
   </div>
-
-  <div class="form-group">
-    <label for="post_status">Post Status</label>
-    <input type="text" class="form-control" name="post_status" value="<?= $post_status ?>">
+  <div>
+    <select name="post_status" id="">
+      <option value="<?=$post_status?>"><?=$post_status?></option>
+<?php
+if($post_status == "published"){
+?>
+      <option value="draft">draft</option>
+<?php
+}else{
+?>
+      <option value="published">published</option>
+<?php
+}
+?>
+    </select>
   </div>
 
   <div class="form-group">
