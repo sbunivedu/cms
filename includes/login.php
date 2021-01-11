@@ -25,9 +25,7 @@ if(isset($_POST['login'])){
     $db_user_role = $row['user_role'];
   }
 
-  if($password !== $db_user_password){
-    header("Location: ../index.php");
-  }else if($username == $db_user_name && $password == $db_user_password){
+  if($username === $db_user_name && $password === $db_user_password){
     $_SESSION['username'] = $db_user_name;
     $_SESSION['firstname'] = $db_user_firstname;
     $_SESSION['lastname'] = $db_user_lastname;
@@ -35,7 +33,7 @@ if(isset($_POST['login'])){
 
     header("Location: ../admin");
   }else{
-    //header("Location: ../index.php");
+    header("Location: ../index.php");
   }
 }
 ?>
