@@ -18,7 +18,6 @@ if(isset($_GET['p_id'])){
 
   // UPDATE POST
   if(isset($_POST['update_post'])){
-    echo "hello";
     $post_author = $_POST['post_author'];
     $post_title = $_POST['post_title'];
     $post_category_id = $_POST['post_category'];
@@ -51,6 +50,12 @@ if(isset($_GET['p_id'])){
     //global $connection;
     $update_post = mysqli_query($connection, $query);
     confirm_query($update_post);
+?>
+<p class="bg-success">
+Post Updated. <a href="../post.php?p_id=<?=$the_post_id?>">View Post</a> or
+<a href='posts.php'>Edit More Posts</a>
+</p>
+<?php
   }
 ?>
 <form class="" action="" method="post" enctype="multipart/form-data">
