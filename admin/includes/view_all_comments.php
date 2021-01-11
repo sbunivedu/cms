@@ -45,7 +45,7 @@ while($row = mysqli_fetch_assoc($select_post_id_query)){
   <td><?= $comment_date ?></td>
   <td><a href='comments.php?approve=<?= $comment_id ?>'>Approve</a></td>
   <td><a href='comments.php?unapprove=<?= $comment_id ?>'>Unapprove</a></td>
-  <td><a href='users.php?delete=<?= $user_id ?>'>Delete</a></td>
+  <td><a href='users.php?delete=<?= $post_id ?>'>Delete</a></td>
   </tr>
 <?php
 }
