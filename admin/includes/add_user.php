@@ -13,8 +13,11 @@ if(isset($_POST['create_user'])){
 
   $create_user_query = mysqli_query($connection, $query);
   confirm_query($create_user_query);
+?>
+  User Created: <a href='users.php'>View Users</a>
+<?php
 }
- ?>
+?>
 <form class="" action="" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="user_firstname">Firstname</label>
