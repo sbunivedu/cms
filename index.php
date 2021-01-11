@@ -36,10 +36,12 @@ while($row = mysqli_fetch_assoc($select_all_posts_query)){
         </p>
         <p><span class="glyphicon glyphicon-time"></span> Posted on <?=$post_date?></p>
         <hr>
-        <img class="img-responsive" src="images/<?=$post_image?>" alt="">
+        <a href="post.php?p_id=<?= $post_id ?>">
+          <img class="img-responsive" src="images/<?=$post_image?>" alt="">
+        </a>
         <hr>
         <p><?=$post_content?></p>
-        <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a class="btn btn-primary" href="post.php?p_id=<?= $post_id ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
         <hr>
         <?php
