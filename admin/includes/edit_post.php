@@ -112,7 +112,7 @@ if($post_status == "published"){
 
   <div class="form-group">
     <label for="post_content">Post Content</label>
-    <textarea type="text" class="form-control" name="post_content" id=""
+    <textarea type="text" class="form-control" name="post_content" id="editor"
       cols="30" rols="10"><?= $post_content ?></textarea>
   </div>
 
