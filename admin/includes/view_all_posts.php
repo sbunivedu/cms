@@ -92,7 +92,7 @@ while($row = mysqli_fetch_assoc($select_categories_id)){
   <td><?= $post_date ?></td>
   <td><a href='../post.php?p_id=<?= $post_id ?>'>View Post</a></td>
   <td><a href='posts.php?source=edit_post&p_id=<?= $post_id ?>'>Edit</a></td>
-  <td><a href='posts.php?delete=<?= $post_id ?>'>Delete</a></td>
+  <td><a onClick='return confirm("Are you sure you want to delete?");' href='posts.php?delete=<?= $post_id ?>'>Delete</a></td>
   </tr>
 <?php
 }
