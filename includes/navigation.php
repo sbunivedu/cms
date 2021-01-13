@@ -31,8 +31,6 @@ session_start();
           <a href="registration.php">Registration</a>
         </li>
 <?php
-echo $_SESSION['user_role']." ".$_GET['p_id'];
-
 if(isset($_SESSION['user_role'])){
   if(isset($_GET['p_id'])){
     $the_post_id = $_GET['p_id'];

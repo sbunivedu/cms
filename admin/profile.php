@@ -64,7 +64,7 @@ include "includes/admin_navigation.php";
 
             <div class="form-group">
               <select class="" name="user_role" id="user_role">
-                <option value="subscriber"><?=$user_role?></option>
+                <option value="<?=$user_role?>"><?=$user_role?></option>
           <?php
             if($user_role == 'admin'){
               echo "<option value='subscriber'>subscriber</option>";
