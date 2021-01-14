@@ -2,16 +2,12 @@
 <?php  include "includes/header.php"; ?>
 
 <?php
-$msg = "hello";
-
-$msg = wordwrap($msg, 70);
-
-mail("lubaochuan@gmail.com", "subject", $msg);
-
 if(isset($_POST['submit'])){
   $to = "blu@sbuniv.edu";
   $subject = $_POST['subject'];
-  $body = $_POST['body'];
+  $body = wordwrap($_POST['body'], 70);
+  $header = "From: ".$_POST('email');
+  mail($to, $subject, $body, $header);
 }
 
 ?>
