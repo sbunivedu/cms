@@ -11,7 +11,24 @@
       <div class="col-md-8">
 
 <?php
-$query = "SELECT * FROM posts WHERE post_status = 'published'";
+$post_count_query = "SELECT * FROM posts WHERE post_status = 'published'";
+$find_count = mysqli_query($connection, $post_count_query);
+$count = mysqli_num_rows($find_count);
+$per_page = 5;
+$count = ceil($count/$per_page);
+
+if(isset($_GET['page'])){
+  $page = $_GET['page'];
+}else{
+  $page = 1;
+}
+if($page == "" || $page == 1){
+  $page_1 = 0;
+}else{
+  $page_1 = ($page - 1) * $per_page;
+}
+
+$query = "SELECT * FROM posts WHERE post_status = 'published' LIMIT $page_1, $per_page";
 $select_all_posts_query = mysqli_query($connection, $query);
 while($row = mysqli_fetch_assoc($select_all_posts_query)){
   $post_id = $row['post_id'];
@@ -43,11 +60,24 @@ while($row = mysqli_fetch_assoc($select_all_posts_query)){
           }
         ?>
       </div>
-
       <!-- Blog Sidebar Widgets Column -->
       <?php include "includes/sidebar.php"; ?>
     <!-- /.row -->
 
     <hr>
-
+    <ul class="pager">
+<?php
+for($i=1; $i<=$count; $i++){
+  if($i == $page){
+?>
+    <li><a class="active_link" href="index.php?page=<?=$i?>"><?=$i?></a></li>
+<?php
+  }else{
+?>
+    <li><a href="index.php?page=<?=$i?>"><?=$i?></a></li>
+<?php
+  }
+}
+?>
+    </ul>
 <?php include "includes/footer.php"; ?>
