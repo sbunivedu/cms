@@ -61,15 +61,15 @@ CREATE TABLE `comments` (
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` VALUES(8, 1, 'blu', 'lubaochuan@gmail.com', 'test comment', 'unapproved', '2020-12-29');
-INSERT INTO `comments` VALUES(9, 2, 'dsaf', 'blu@sbuniv.edu', 'hello', 'unapproved', '2020-12-29');
+INSERT INTO `comments` VALUES(8, 1, 'blu', 'l@gmail.com', 'test comment', 'unapproved', '2020-12-29');
+INSERT INTO `comments` VALUES(9, 2, 'dsaf', 'b@sbuniv.edu', 'hello', 'unapproved', '2020-12-29');
 INSERT INTO `comments` VALUES(10, 1, '', '', '', 'unapproved', '2021-01-07');
-INSERT INTO `comments` VALUES(11, 1, 'dsaf', 'blu@sbuniv.edu', 'Hello', 'unapproved', '2021-01-07');
-INSERT INTO `comments` VALUES(12, 1, 'dsaf', 'blu@sbuniv.edu', 'Hello', 'unapproved', '2021-01-07');
-INSERT INTO `comments` VALUES(13, 1, 'b. Lu', 'lubaochuan@gmail.com', 'Hello world', 'unapproved', '2021-01-07');
-INSERT INTO `comments` VALUES(14, 2, 'b. Lu', 'lubaochuan@gmail.com', 'Good job.', 'approved', '2021-01-11');
-INSERT INTO `comments` VALUES(15, 2, 'blu', 'lubaochuan@gmail.com', 'Good job.', 'approved', '2021-01-11');
-INSERT INTO `comments` VALUES(16, 7, 'blu', 'jianpuwang07@gmail.com', 'asdfa', 'approved', '2021-01-13');
+INSERT INTO `comments` VALUES(11, 1, 'dsaf', 'b@sbuniv.edu', 'Hello', 'unapproved', '2021-01-07');
+INSERT INTO `comments` VALUES(12, 1, 'dsaf', 'b@sbuniv.edu', 'Hello', 'unapproved', '2021-01-07');
+INSERT INTO `comments` VALUES(13, 1, 'b. Lu', 'l@gmail.com', 'Hello world', 'unapproved', '2021-01-07');
+INSERT INTO `comments` VALUES(14, 2, 'b. Lu', 'l@gmail.com', 'Good job.', 'approved', '2021-01-11');
+INSERT INTO `comments` VALUES(15, 2, 'blu', 'l@gmail.com', 'Good job.', 'approved', '2021-01-11');
+INSERT INTO `comments` VALUES(16, 7, 'blu', 'h@gmail.com', 'asdfa', 'approved', '2021-01-13');
 
 -- --------------------------------------------------------
 
